@@ -10,7 +10,7 @@
 
 <p align="center">
     <!-- TODO: Replace the URL below with your actual live demo link -->
-    <a href="https://nexus-ecommerce.vercel.app" target="_blank">
+    Demo Link :- <a href="https://nexus-451.netlify.app/" target="_blank">
         NEXUS
     </a>
 </p>
