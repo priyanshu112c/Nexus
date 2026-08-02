@@ -1,0 +1,401 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   THEME TOKEN SYSTEM
+   Two complete visual identities. Every component reads from
+   these CSS variables, so switching <html data-theme> morphs the
+   ENTIRE website — surfaces, accents, shadows, glass, gradients,
+   particles, cursors, skeletons — not just a color swap.
+   ============================================================ */
+
+:root,
+:root[data-theme='midnight'] {
+    /* — Midnight Luxury (Dark) — Apple Dark / Nothing / Tesla / Cyberpunk */
+
+    /* Surfaces */
+    --c-base: 5 5 8;
+    /* page background #050507 */
+    --c-pane: 10 10 15;
+    /* cards / glass-strong */
+    --c-pane-raised: 17 17 24;
+    /* raised panels */
+    --c-pane-hover: 26 26 38;
+    /* hover surfaces */
+
+    /* Text + overlays */
+    --c-ink: 255 255 255;
+    --c-night: 0 0 0;
+
+    /* Accent — electric blue → purple */
+    --c-accent: 77 159 255;
+    --c-accent-light: 122 184 255;
+    --c-accent-secondary: 139 92 246;
+    --c-accent-secondary-light: 167 139 250;
+    --c-accent-glow: 56 189 248;
+
+    /* Status */
+    --c-danger: 248 113 113;
+    --c-success: 52 211 153;
+    --c-warning: 251 191 36;
+
+    /* Legacy aliases */
+    --c-graphite: 35 35 46;
+    --c-gunmetal: 28 28 38;
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px -10px rgba(77, 159, 255, 0.5);
+    --shadow-glow-lg: 0 0 80px -20px rgba(77, 159, 255, 0.6);
+    --shadow-glow-purple: 0 0 40px -10px rgba(139, 92, 246, 0.5);
+    --shadow-card: 0 20px 60px -20px rgba(0, 0, 0, 0.8);
+    --shadow-card-hover: 0 30px 80px -20px rgba(77, 159, 255, 0.25);
+
+    /* Glass */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-strong-bg: rgba(10, 10, 15, 0.7);
+    --glass-border-strong: rgba(255, 255, 255, 0.1);
+
+    /* Borders / dividers */
+    --border-subtle: rgba(255, 255, 255, 0.05);
+
+    /* Decorative strokes */
+    --stroke-soft: rgba(255, 255, 255, 0.1);
+
+    /* Gradient text + borders */
+    --gradient-text: linear-gradient(135deg, #7ab8ff, #4d9fff, #8b5cf6, #7ab8ff);
+    --gradient-card-base: #0a0a0f;
+    --gradient-card-base-hover: #0d0d14;
+    --gradient-card-line: linear-gradient(135deg, rgba(77, 159, 255, 0.5), rgba(139, 92, 246, 0.3), rgba(77, 159, 255, 0.1));
+    --gradient-card-line-hover: linear-gradient(135deg, rgba(77, 159, 255, 0.9), rgba(139, 92, 246, 0.7), rgba(56, 189, 248, 0.5));
+
+    /* Skeleton shimmer */
+    --skeleton-a: #14141d;
+    --skeleton-b: #1e1e2a;
+
+    /* Body ambience */
+    --ambient-a: rgba(77, 159, 255, 0.06);
+    --ambient-b: rgba(139, 92, 246, 0.05);
+    --scroll-track: #060609;
+    --scroll-thumb: #1f2a3a;
+
+    /* Cursor */
+    --cursor-ring: rgba(77, 159, 255, 0.7);
+    --cursor-dot: #4d9fff;
+    --cursor-glow: rgba(77, 159, 255, 0.8);
+}
+
+:root[data-theme='scandi'] {
+    /* — Scandinavian Luxury (Light) — Apple Light / Notion / Linear / Stripe */
+
+    /* Surfaces */
+    --c-base: 248 246 242;
+    /* warm ivory */
+    --c-pane: 255 255 255;
+    --c-pane-raised: 252 250 246;
+    --c-pane-hover: 255 255 255;
+
+    /* Text + overlays */
+    --c-ink: 32 40 51;
+    /* soft slate-ink */
+    --c-night: 23 28 35;
+
+    /* Accent — refined azure with soft slate-violet */
+    --c-accent: 0 112 243;
+    --c-accent-light: 56 148 255;
+    --c-accent-secondary: 99 102 241;
+    --c-accent-secondary-light: 129 140 248;
+    --c-accent-glow: 56 148 255;
+
+    /* Status (same hues, tuned for light) */
+    --c-danger: 225 62 62;
+    --c-success: 4 163 108;
+    --c-warning: 202 138 4;
+
+    /* Legacy aliases */
+    --c-graphite: 61 66 74;
+    --c-gunmetal: 51 56 64;
+
+    /* Shadows — soft, gentle, floating */
+    --shadow-glow: 0 12px 40px -12px rgba(0, 112, 243, 0.25);
+    --shadow-glow-lg: 0 24px 70px -20px rgba(0, 112, 243, 0.3);
+    --shadow-glow-purple: 0 12px 40px -12px rgba(99, 102, 241, 0.28);
+    --shadow-card: 0 12px 40px -12px rgba(31, 41, 55, 0.12);
+    --shadow-card-hover: 0 24px 60px -16px rgba(31, 41, 55, 0.16);
+
+    /* Glass — white translucent frost */
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(31, 41, 55, 0.08);
+    --glass-strong-bg: rgba(255, 255, 255, 0.82);
+    --glass-border-strong: rgba(31, 41, 55, 0.1);
+
+    /* Borders / dividers */
+    --border-subtle: rgba(31, 41, 55, 0.08);
+
+    /* Decorative strokes */
+    --stroke-soft: rgba(31, 41, 55, 0.14);
+
+    /* Gradient text + borders — soft azure → violet */
+    --gradient-text: linear-gradient(135deg, #0a84ff, #0070f3, #6366f1, #0a84ff);
+    --gradient-card-base: #ffffff;
+    --gradient-card-base-hover: #ffffff;
+    --gradient-card-line: linear-gradient(135deg, rgba(0, 112, 243, 0.32), rgba(99, 102, 241, 0.22), rgba(0, 112, 243, 0.08));
+    --gradient-card-line-hover: linear-gradient(135deg, rgba(0, 112, 243, 0.65), rgba(99, 102, 241, 0.5), rgba(56, 148, 255, 0.4));
+
+    /* Skeleton shimmer */
+    --skeleton-a: #eceff4;
+    --skeleton-b: #f6f7fa;
+
+    /* Body ambience */
+    --ambient-a: rgba(0, 112, 243, 0.07);
+    --ambient-b: rgba(99, 102, 241, 0.05);
+    --scroll-track: #f8f7f4;
+    --scroll-thumb: #d7dbe3;
+    --scroll-thumb-hover: #a8c7f5;
+
+    /* Cursor — minimal elegant */
+    --cursor-ring: rgba(23, 28, 35, 0.4);
+    --cursor-dot: #171c23;
+    --cursor-glow: rgba(0, 112, 243, 0.35);
+}
+
+/* Smooth the entire theme morph (~550ms) — no layout props, GPU-cheap */
+@layer base {
+
+    *,
+    *::before,
+    *::after {
+        transition-property: background-color, border-color, color, box-shadow, fill, stroke;
+        transition-duration: 550ms;
+        transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Animations (spinners, etc.) must keep their own transition */
+    .animate-spin,
+    .animate-pulse,
+    .animate-bounce,
+    .animate-ping,
+    [data-no-theme-transition] * {
+        transition: none !important;
+    }
+
+    * {
+        @apply border-[color:var(--border-subtle)];
+    }
+
+    html {
+        scroll-behavior: auto;
+        background-color: rgb(var(--c-base));
+    }
+
+    body {
+        @apply bg-noir text-ink/90 font-body antialiased overflow-x-hidden;
+        background-image: radial-gradient(ellipse at 20% 0%, var(--ambient-a), transparent 50%),
+            radial-gradient(ellipse at 80% 20%, var(--ambient-b), transparent 50%);
+    }
+
+    ::selection {
+        background: rgba(var(--c-accent), 0.3);
+        color: rgb(var(--c-base));
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--scroll-track);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--scroll-thumb), var(--c-pane-hover));
+        border-radius: 8px;
+        border: 2px solid var(--scroll-track);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, rgb(var(--c-accent)), rgb(var(--c-accent-secondary)));
+    }
+}
+
+@layer components {
+
+    /* Glass panel */
+    .glass {
+        @apply backdrop-blur-xl border border-[color:var(--glass-border)];
+        background-color: var(--glass-bg);
+    }
+
+    .glass-strong {
+        @apply backdrop-blur-2xl border border-[color:var(--glass-border-strong)];
+        background-color: var(--glass-strong-bg);
+    }
+
+    /* Animated gradient text */
+    .text-gradient {
+        @apply bg-clip-text text-transparent;
+        background-image: var(--gradient-text);
+        background-size: 300% 300%;
+        animation: gradient-move 8s ease infinite;
+    }
+
+    .text-gradient-static {
+        @apply bg-clip-text text-transparent;
+        background-image: linear-gradient(135deg, rgb(var(--c-accent-light)), rgb(var(--c-accent-secondary)));
+    }
+
+    /* Gradient border card */
+    .gradient-border {
+        position: relative;
+        background: var(--gradient-card-base) padding-box, var(--gradient-card-line) border-box;
+        border: 1px solid transparent;
+    }
+
+    .gradient-border-hover {
+        transition: all 0.4s ease;
+    }
+
+    .gradient-border-hover:hover {
+        background: var(--gradient-card-base-hover) padding-box, var(--gradient-card-line-hover) border-box;
+        border: 1px solid transparent;
+        box-shadow: var(--shadow-glow-lg);
+    }
+
+    /* Glow line */
+    .glow-line {
+        height: 1px;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(var(--c-accent), 0.6),
+                rgba(var(--c-accent-secondary), 0.6),
+                transparent);
+    }
+
+    /* Shimmer skeleton */
+    .skeleton {
+        background: linear-gradient(110deg, var(--skeleton-a) 8%, var(--skeleton-b) 18%, var(--skeleton-a) 33%);
+        background-size: 200% 100%;
+        animation: shimmer 1.8s linear infinite;
+    }
+
+    /* Magnetic button base */
+    .btn-magnetic {
+        @apply relative overflow-hidden transition-transform duration-300 will-change-transform;
+    }
+
+    /* Ripple */
+    .ripple-effect {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(var(--c-ink), 0.3);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    /* Noise overlay — same grain, lighter in scandi */
+    .noise-overlay::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 90;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    :root[data-theme='scandi'] .noise-overlay::after {
+        opacity: 0.018;
+    }
+
+    /* Lens flare utility */
+    .lens-flare {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+    }
+}
+
+@layer utilities {
+    .perspective-1000 {
+        perspective: 1000px;
+    }
+
+    .preserve-3d {
+        transform-style: preserve-3d;
+    }
+
+    .backface-hidden {
+        backface-visibility: hidden;
+    }
+
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Hide scrollbar */
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Mask reveal for images */
+    .mask-reveal {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    /* Custom cursor */
+    .cursor-glow-hidden {
+        cursor: none !important;
+    }
+}
+
+/* Custom cursor ring — theme aware */
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--cursor-ring);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+    mix-blend-mode: exclusion;
+}
+
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--cursor-dot);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 101;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--cursor-glow);
+}
+
+.cursor-ring.active {
+    width: 70px;
+    height: 70px;
+    background: rgba(var(--c-accent), 0.1);
+    border-color: rgba(var(--c-accent-secondary), 0.9);
+}
