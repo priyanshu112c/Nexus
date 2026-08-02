@@ -11,7 +11,7 @@
 <p align="center">
     <!-- TODO: Replace the URL below with your actual live demo link -->
     <a href="https://nexus-ecommerce.vercel.app" target="_blank">
-        <img src="https://img.shields.io/badge/Live%20Demo-Vercel-8b5cf6?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+        <img width="2000" height="530" alt="netlify-seeklogo" src="https://github.com/user-attachments/assets/f67187b0-41ba-4b20-9f92-261906d5bad7" />
     </a>
 </p>
 
