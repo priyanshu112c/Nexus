@@ -11,7 +11,7 @@
 <p align="center">
     <!-- TODO: Replace the URL below with your actual live demo link -->
     <a href="https://nexus-ecommerce.vercel.app" target="_blank">
-        <img width="2000" height="530" alt="netlify-seeklogo" src="https://github.com/user-attachments/assets/f67187b0-41ba-4b20-9f92-261906d5bad7" />
+        NEXUS
     </a>
 </p>
 
