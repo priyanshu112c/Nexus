@@ -24,9 +24,9 @@
 | | |
 | :---: | :---: |
 | **Homepage — Midnight theme** | **Homepage — Scandinavian theme** |
-| <img width="1366" height="731" alt="2" src="https://github.com/user-attachments/assets/e4a8078c-e5ec-4dd5-9b8f-4f16999b7271" /> | <img width="1363" height="731" alt="3" src="https://github.com/user-attachments/assets/67250011-a199-4564-b6ac-0eb0f263e219" /> |
+| <img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/e4a8078c-e5ec-4dd5-9b8f-4f16999b7271" /> | <img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/67250011-a199-4564-b6ac-0eb0f263e219" /> |
 | **Product details** | **Cart drawer** |
-| <img width="1361" height="732" alt="4" src="https://github.com/user-attachments/assets/b1de3cd8-ac93-4030-9d09-7e9377e526c0" /> | <img width="1362" height="732" alt="1" src="https://github.com/user-attachments/assets/34bc7113-c63a-4fe8-99b5-828f810e6618" /> |
+| <img width="1920" height="1080" alt="4" src="https://github.com/user-attachments/assets/b1de3cd8-ac93-4030-9d09-7e9377e526c0" /> | <img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/34bc7113-c63a-4fe8-99b5-828f810e6618" /> |
 
 ## ✨ Features
 
