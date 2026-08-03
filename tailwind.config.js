@@ -2,6 +2,9 @@ export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
+            screens: {
+                xs: '480px'
+            },
             colors: {
                 // Semantic surface tokens — values come from CSS variables per theme.
                 noir: {

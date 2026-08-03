@@ -60,9 +60,9 @@ export default function Footer() {
                 style={{ background: 'radial-gradient(ellipse, rgba(77,159,255,0.5), transparent 60%)' }}
             />
 
-            <div className="max-w-[1400px] mx-auto px-6 pt-20 pb-10">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-10">
                 {/* Features strip */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-16 sm:mb-20">
                     {[
                         { Icon: FiTruck, title: 'Express Delivery', sub: 'Same-day shipping available' },
                         { Icon: FiShield, title: '2-Year Warranty', sub: 'Extended coverage included' },
@@ -75,21 +75,21 @@ export default function Footer() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: '-60px' }}
                             transition={{ delay: i * 0.1, duration: 0.6 }}
-                            className="flex items-center gap-4 p-5 rounded-2xl glass hover:border-neon/20 transition-colors duration-300 group"
+                            className="flex items-center gap-3 sm:gap-4 p-3 sm:p-5 rounded-xl sm:rounded-2xl glass hover:border-neon/20 transition-colors duration-300 group"
                         >
-                            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-neon/20 to-neon-purple/20 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:shadow-glow transition-all duration-300">
-                                <Icon className="text-neon-light" size={20} />
+                            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-gradient-to-br from-neon/20 to-neon-purple/20 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:shadow-glow transition-all duration-300">
+                                <Icon className="text-neon-light" size={16} />
                             </div>
                             <div>
-                                <p className="text-sm font-semibold">{title}</p>
-                                <p className="text-xs text-ink/40">{sub}</p>
+                                <p className="text-xs sm:text-sm font-semibold">{title}</p>
+                                <p className="text-[10px] sm:text-xs text-ink/40">{sub}</p>
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
                 {/* Main footer grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-10">
                     {/* Brand */}
                     <div className="col-span-2">
                         <Link to="/" className="flex items-center gap-2.5 mb-6">
@@ -123,16 +123,16 @@ export default function Footer() {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="your@email.com"
-                                    className="flex-1 px-4 py-3 rounded-xl bg-ink/[0.04] border border-ink/10 placeholder:text-ink/30 text-sm focus:outline-none focus:border-neon/50 focus:shadow-glow transition-all duration-300"
+                                    className="flex-1 min-w-0 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-ink/[0.04] border border-ink/10 placeholder:text-ink/30 text-xs sm:text-sm focus:outline-none focus:border-neon/50 focus:shadow-glow transition-all duration-300"
                                 />
                                 <motion.button
                                     type="submit"
                                     whileTap={{ scale: 0.95 }}
-                                    className="w-11 h-11 rounded-xl bg-gradient-to-r from-neon to-neon-purple flex items-center justify-center text-ink shadow-glow hover:shadow-glow-lg transition-shadow duration-300"
+                                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-r from-neon to-neon-purple flex items-center justify-center text-ink shadow-glow hover:shadow-glow-lg transition-shadow duration-300 shrink-0"
                                     aria-label="Subscribe"
                                     data-hover
                                 >
-                                    <FiSend size={16} />
+                                    <FiSend size={15} />
                                 </motion.button>
                             </div>
                         </form>

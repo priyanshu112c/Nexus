@@ -40,27 +40,27 @@ function DealCard({ deal, index }) {
             </div>
 
             {/* Content */}
-            <div className="absolute inset-x-0 bottom-0 p-6">
-                <h3 className="font-display text-2xl font-bold mb-1">{deal.title}</h3>
-                <div className="flex items-end gap-3 mb-5">
-                    <span className="font-display text-3xl font-bold text-gradient-static">${deal.price.toLocaleString()}</span>
-                    <span className="text-ink/35 line-through text-sm mb-1">${deal.originalPrice.toLocaleString()}</span>
+            <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
+                <h3 className="font-display text-lg sm:text-2xl font-bold mb-1">{deal.title}</h3>
+                <div className="flex items-end gap-2 sm:gap-3 mb-4 sm:mb-5">
+                    <span className="font-display text-xl sm:text-3xl font-bold text-gradient-static">${deal.price.toLocaleString()}</span>
+                    <span className="text-ink/35 line-through text-xs sm:text-sm mb-1">${deal.originalPrice.toLocaleString()}</span>
                 </div>
 
                 {/* Countdown */}
-                <div className="flex gap-2 mb-5">
+                <div className="flex gap-1.5 sm:gap-2 mb-4 sm:mb-5">
                     {timeBlocks.map((block) => (
-                        <div key={block.label} className="flex-1 text-center py-2.5 rounded-xl glass backdrop-blur-xl">
+                        <div key={block.label} className="flex-1 text-center py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl glass backdrop-blur-xl">
                             <motion.p
                                 key={`${block.label}-${block.value}`}
                                 initial={{ scale: 1.3, color: '#ffffff' }}
                                 animate={{ scale: 1, color: '#4d9fff' }}
                                 transition={{ duration: 0.3 }}
-                                className="font-mono text-xl font-bold text-neon-light"
+                                className="font-mono text-sm sm:text-xl font-bold text-neon-light"
                             >
                                 {String(block.value).padStart(2, '0')}
                             </motion.p>
-                            <p className="text-[9px] uppercase tracking-widest text-ink/40 mt-0.5">{block.label}</p>
+                            <p className="text-[8px] sm:text-[9px] uppercase tracking-widest text-ink/40 mt-0.5">{block.label}</p>
                         </div>
                     ))}
                 </div>
@@ -77,7 +77,7 @@ function DealCard({ deal, index }) {
                         }
                         addToCart(product)
                     }}
-                    className="w-full py-3 rounded-full bg-gradient-to-r from-neon to-neon-purple text-sm font-semibold text-ink shadow-glow hover:shadow-glow-lg transition-shadow duration-300"
+                    className="w-full py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-neon to-neon-purple text-xs sm:text-sm font-semibold text-ink shadow-glow hover:shadow-glow-lg transition-shadow duration-300"
                     data-hover
                 >
                     Grab This Deal
@@ -89,17 +89,17 @@ function DealCard({ deal, index }) {
 
 export default function FlashDeals() {
     return (
-        <section className="relative z-10 py-24 overflow-hidden">
+        <section className="relative z-10 py-16 sm:py-24 overflow-hidden">
             {/* Ambient glow */}
             <div className="absolute top-0 right-0 w-[30rem] h-[30rem] rounded-full bg-neon-purple/[0.05] blur-[100px] pointer-events-none" />
 
-            <div className="max-w-[1400px] mx-auto px-6">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
                 <SectionHeading
                     eyebrow="Limited Time"
                     title="Flash Deals"
                     subtitle="Lightning-fast savings on flagship technology. When the clock hits zero, these prices vanish."
                 />
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     {deals.map((deal, i) => (
                         <DealCard key={deal.id} deal={deal} index={i} />
                     ))}

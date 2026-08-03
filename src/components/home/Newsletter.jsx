@@ -21,14 +21,14 @@ export default function Newsletter() {
     }
 
     return (
-        <section className="relative z-10 py-24">
-            <div className="max-w-[1400px] mx-auto px-6">
+        <section className="relative z-10 py-16 sm:py-24">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-80px' }}
                     transition={{ duration: 0.8 }}
-                    className="relative overflow-hidden rounded-[2.5rem] glass-strong p-12 md:p-20 text-center"
+                    className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] glass-strong p-6 sm:p-12 md:p-20 text-center"
                 >
                     {/* Animated backgrounds */}
                     <div className="absolute inset-0 pointer-events-none">
@@ -57,10 +57,10 @@ export default function Newsletter() {
                             <FiSend className="text-ink" size={24} />
                         </motion.span>
 
-                        <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+                        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                             Join The <span className="text-gradient">Inner Circle</span>
                         </h2>
-                        <p className="text-ink/50 max-w-xl mx-auto mb-10">
+                        <p className="text-ink/50 text-sm sm:text-base max-w-xl mx-auto mb-8 sm:mb-10">
                             Get exclusive drops, private flash sales, and early access to flagship launches — before anyone else.
                         </p>
 
@@ -74,18 +74,18 @@ export default function Newsletter() {
                                     <FiCheckCircle /> You're on the list! Check your inbox.
                                 </motion.div>
                             )}
-                            <div className="relative flex gap-3 p-2 rounded-full glass-strong">
+                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 p-2 rounded-2xl sm:rounded-full glass-strong">
                                 <input
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Enter your email for exclusives"
-                                    className="flex-1 bg-transparent px-5 py-3 text-sm placeholder:text-ink/30 focus:outline-none"
+                                    className="flex-1 bg-transparent px-4 sm:px-5 py-3 text-sm placeholder:text-ink/30 focus:outline-none w-full"
                                 />
                                 <motion.button
                                     type="submit"
                                     whileTap={{ scale: 0.95 }}
-                                    className="px-7 py-3 rounded-full bg-gradient-to-r from-neon to-neon-purple text-sm font-semibold text-ink shadow-glow hover:shadow-glow-lg transition-shadow duration-300 whitespace-nowrap"
+                                    className="px-6 sm:px-7 py-3 rounded-xl sm:rounded-full bg-gradient-to-r from-neon to-neon-purple text-sm font-semibold text-ink shadow-glow hover:shadow-glow-lg transition-shadow duration-300 whitespace-nowrap w-full sm:w-auto"
                                     data-hover
                                 >
                                     Get Access

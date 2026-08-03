@@ -48,19 +48,19 @@ export default function ProductDetails() {
     }
 
     return (
-        <div className="max-w-[1400px] mx-auto px-6 pt-36 pb-20">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-20">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-xs text-ink/40 mb-8">
-                <Link to="/" className="hover:text-neon-light transition-colors">Home</Link>
+            <nav className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-ink/40 mb-6 sm:mb-8 overflow-x-auto whitespace-nowrap pb-1">
+                <Link to="/" className="hover:text-neon-light transition-colors shrink-0">Home</Link>
                 <span>/</span>
-                <Link to={`/products?category=${product.category}`} className="hover:text-neon-light transition-colors capitalize">{product.category}</Link>
+                <Link to={`/products?category=${product.category}`} className="hover:text-neon-light transition-colors capitalize shrink-0">{product.category}</Link>
                 <span>/</span>
-                <span className="text-ink/70">{product.name}</span>
+                <span className="text-ink/70 truncate">{product.name}</span>
             </nav>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 {/* Gallery */}
-                <div className="sticky top-32">
+                <div className="lg:sticky lg:top-32">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.98 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -132,7 +132,7 @@ export default function ProductDetails() {
                         <span className="text-[10px] uppercase tracking-widest text-ink/40 capitalize">{product.category}</span>
                     </div>
 
-                    <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">{product.name}</h1>
+                    <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{product.name}</h1>
 
                     <div className="flex items-center gap-3 mb-6">
                         <StarRating rating={product.rating} />
@@ -144,19 +144,19 @@ export default function ProductDetails() {
                     <p className="text-ink/50 leading-relaxed mb-8">{product.description}</p>
 
                     {/* Price */}
-                    <div className="flex items-end gap-4 mb-8">
+                    <div className="flex items-end gap-3 sm:gap-4 mb-8 flex-wrap">
                         <motion.span
                             key={product.price}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="font-display text-5xl font-bold text-gradient-static"
+                            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient-static"
                         >
                             ${product.price.toLocaleString()}
                         </motion.span>
                         {product.originalPrice > product.price && (
                             <>
-                                <span className="text-ink/30 line-through text-xl mb-2">${product.originalPrice.toLocaleString()}</span>
-                                <span className="text-success/ text-sm font-semibold mb-2">
+                                <span className="text-ink/30 line-through text-base sm:text-xl mb-1 sm:mb-2">${product.originalPrice.toLocaleString()}</span>
+                                <span className="text-success/ text-xs sm:text-sm font-semibold mb-1 sm:mb-2">
                                     Save ${(product.originalPrice - product.price).toLocaleString()}
                                 </span>
                             </>
@@ -241,21 +241,21 @@ export default function ProductDetails() {
                     </div>
 
                     {/* Trust badges */}
-                    <div className="grid grid-cols-3 gap-3 mb-8">
+                    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
                         {[
                             { icon: FiTruck, label: 'Free 2-Day Shipping' },
                             { icon: FiShield, label: '2-Year Warranty' },
                             { icon: FiRefreshCw, label: '30-Day Free Returns' }
                         ].map(({ icon: Icon, label }) => (
-                            <div key={label} className="flex flex-col items-center gap-2 p-4 rounded-2xl glass text-center">
-                                <Icon className="text-neon-light" size={18} />
+                            <div key={label} className="flex items-center sm:flex-col gap-2 sm:gap-2 p-3 sm:p-4 rounded-2xl glass text-center">
+                                <Icon className="text-neon-light shrink-0" size={18} />
                                 <span className="text-[10px] text-ink/50">{label}</span>
                             </div>
                         ))}
                     </div>
 
                     {/* Specs */}
-                    <div className="glass-strong rounded-3xl p-7">
+                    <div className="glass-strong rounded-3xl p-4 sm:p-7">
                         <h3 className="font-display text-lg font-bold mb-5 flex items-center gap-2">
                             <FiCpu className="text-neon-light" /> Technical Specifications
                         </h3>
@@ -279,11 +279,11 @@ export default function ProductDetails() {
 
             {/* Related products */}
             {related.length > 0 && (
-                <div className="mt-24">
-                    <h2 className="font-display text-3xl font-bold mb-8">
+                <div className="mt-16 sm:mt-24">
+                    <h2 className="font-display text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
                         You May Also <span className="text-gradient">Like</span>
                     </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                         {related.map((p, i) => (
                             <ProductCard key={p.id} product={p} index={i} />
                         ))}

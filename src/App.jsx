@@ -80,7 +80,7 @@ function AppContent() {
             <main className="relative z-10">
                 <Suspense fallback={<PageLoader />}>
                     <AnimatePresence mode="wait" initial={false}>
-                        <Routes location={location} key={location.pathname}>
+                        <Routes location={location} key={location.pathname + location.search}>
                             <Route path="/" element={<PageTransition><Home /></PageTransition>} />
                             <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
                             <Route path="/product/:id" element={<PageTransition><ProductDetails /></PageTransition>} />

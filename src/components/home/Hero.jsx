@@ -94,14 +94,15 @@ export default function Hero() {
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[50rem] h-[50rem] rounded-full bg-neon/[0.06] blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-[35rem] h-[35rem] rounded-full bg-neon-purple/[0.06] blur-[120px] pointer-events-none" />
 
-            <div className="relative z-10 max-w-[1400px] mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
                 {/* Left - Text content */}
                 <div className="text-center lg:text-left">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border-neon/20 mb-8"
+                        className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full glass border-neon/20 mb-8"
                     >
                         <span className="relative flex w-2 h-2">
                             <span className="absolute inline-flex w-full h-full animate-ping bg-neon rounded-full opacity-75" />
@@ -116,7 +117,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, delay: 0.35 }}
-                        className="font-display font-bold text-5xl md:text-6xl xl:text-7xl leading-[1.05] tracking-tight mb-6"
+                        className="font-display font-bold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.05] tracking-tight mb-6"
                     >
                         Experience
                         <br />
@@ -129,7 +130,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, delay: 0.55 }}
-                        className="text-ink/50 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-10"
+                        className="text-ink/50 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-8 sm:mb-10"
                     >
                         NEXUS is not just a store — it's a cinematic journey through the finest devices ever engineered. Discover, experience, and own the future.
                     </motion.p>
@@ -138,11 +139,11 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, delay: 0.75 }}
-                        className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
+                        className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4"
                     >
                         <MagneticButton
                             variant="primary"
-                            className="group"
+                            className="group w-full sm:w-auto"
                             onClick={() => window.location.href = '/products'}
                         >
                             Explore Collection
@@ -150,7 +151,7 @@ export default function Hero() {
                         </MagneticButton>
                         <MagneticButton
                             variant="ghost"
-                            className="group"
+                            className="group w-full sm:w-auto"
                             onClick={() => window.location.href = '/about'}
                         >
                             <FiPlay className="group-hover:scale-110 transition-transform duration-300" />
@@ -163,7 +164,7 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1.1 }}
-                        className="grid grid-cols-3 gap-6 mt-14 max-w-md mx-auto lg:mx-0"
+                        className="grid grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14 max-w-md mx-auto lg:mx-0"
                     >
                         {[
                             { value: '500+', label: 'Flagship Devices' },
@@ -171,8 +172,8 @@ export default function Hero() {
                             { value: '99.9%', label: 'Delight Rate' }
                         ].map((s) => (
                             <div key={s.label} className="text-center lg:text-left">
-                                <p className="font-display text-3xl font-bold text-gradient-static">{s.value}</p>
-                                <p className="text-xs text-ink/40 mt-1">{s.label}</p>
+                                <p className="font-display text-2xl sm:text-3xl font-bold text-gradient-static">{s.value}</p>
+                                <p className="text-[10px] sm:text-xs text-ink/40 mt-1">{s.label}</p>
                             </div>
                         ))}
                     </motion.div>
@@ -183,7 +184,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.4 }}
-                    className="relative h-[420px] md:h-[560px] lg:h-[640px]"
+                    className="relative h-[300px] sm:h-[380px] md:h-[480px] lg:h-[640px]"
                 >
                     <Canvas
                         camera={{ position: [0, 0, 6], fov: 42 }}
@@ -205,12 +206,12 @@ export default function Hero() {
                         initial={{ opacity: 0, x: -40 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.4, duration: 0.8 }}
-                        className="absolute top-12 left-8 glass rounded-2xl px-5 py-4 shadow-card backdrop-blur-xl"
+                        className="absolute top-8 sm:top-12 left-2 sm:left-8 glass rounded-2xl px-3 sm:px-5 py-3 sm:py-4 shadow-card backdrop-blur-xl"
                     >
-                        <p className="text-xs text-ink/40 mb-1">Flagship Launch</p>
-                        <p className="font-display font-semibold text-sm">Aura Pro 16″</p>
+                        <p className="text-[10px] sm:text-xs text-ink/40 mb-1">Flagship Launch</p>
+                        <p className="font-display font-semibold text-xs sm:text-sm">Aura Pro 16″</p>
                         <div className="flex items-center gap-1.5 mt-2">
-                            <span className="px-2 py-0.5 rounded-full bg-success/15 text-success/ text-[10px] font-bold border border-success/20">
+                            <span className="px-2 py-0.5 rounded-full bg-success/15 text-success/ text-[9px] sm:text-[10px] font-bold border border-success/20">
                                 NOW LIVE
                             </span>
                         </div>
@@ -220,19 +221,19 @@ export default function Hero() {
                         initial={{ opacity: 0, x: 40 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.7, duration: 0.8 }}
-                        className="absolute bottom-16 right-6 glass rounded-2xl px-5 py-4 shadow-card backdrop-blur-xl"
+                        className="absolute bottom-16 right-2 sm:right-6 glass rounded-2xl px-3 sm:px-5 py-3 sm:py-4 shadow-card backdrop-blur-xl"
                     >
-                        <p className="text-xs text-ink/40 mb-1">Up to</p>
-                        <p className="font-display text-2xl font-bold text-gradient-static">40% OFF</p>
-                        <p className="text-[10px] text-ink/40">Summer Tech Festival</p>
+                        <p className="text-[10px] sm:text-xs text-ink/40 mb-1">Up to</p>
+                        <p className="font-display text-xl sm:text-2xl font-bold text-gradient-static">40% OFF</p>
+                        <p className="text-[9px] sm:text-[10px] text-ink/40">Summer Tech Festival</p>
                     </motion.div>
 
-                    {/* Scroll indicator */}
+                    {/* Scroll indicator - hidden on mobile */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 2, duration: 1 }}
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+                        className="hidden sm:flex absolute bottom-0 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
                     >
                         <span className="text-[10px] tracking-[0.3em] uppercase text-ink/30">Scroll</span>
                         <motion.div
